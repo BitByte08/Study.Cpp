@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(untitled main.cpp)
 add_executable(operator_overloading operator_overloading/operator_overloading.cpp)
+add_executable(reference reference/reference.cpp)
