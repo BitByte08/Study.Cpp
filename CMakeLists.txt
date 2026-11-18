@@ -16,4 +16,11 @@ add_executable(my_string example/my_string/my_string.cpp example/my_string/my_st
 add_executable(function_specifier function_specifier/function_specifier.cpp)
 add_executable(storage_class_specifier storage_class_specifier/storage_class_specifier.cpp)
 add_executable(inheritance inheritance/Inheritance.cpp)
-add_executable(stream stream/stream.cpp)
+add_executable(io_stream stream/io_stream.cpp)
+add_executable(file_stream stream/file_stream.cpp)
+
+configure_file(stream/file_stream.txt ${CMAKE_CURRENT_BINARY_DIR}/file_stream.txt COPYONLY)
+configure_file(stream/file_stream_other.txt ${CMAKE_CURRENT_BINARY_DIR}/file_stream_other.txt COPYONLY)
+configure_file(stream/file_stream_output.txt ${CMAKE_CURRENT_BINARY_DIR}/file_stream_output.txt COPYONLY)
+
+add_executable(string_stream stream/string_stream.cpp)
