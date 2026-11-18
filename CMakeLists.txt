@@ -15,3 +15,4 @@ add_executable(my_string example/my_string/my_string.cpp example/my_string/my_st
         example/my_string/main.cpp)
 add_executable(function_specifier function_specifier/function_specifier.cpp)
 add_executable(storage_class_specifier storage_class_specifier/storage_class_specifier.cpp)
+add_executable(inheritance inheritance/Inheritance.cpp)
