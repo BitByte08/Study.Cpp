@@ -26,6 +26,21 @@ void static_member_class::count_function_static_member() {
     cout << function_static_member << endl;
 }
 
+class Server {
+private:
+    mutable class Cache {
+    private:
+    public:
+        void update() {};
+    } cache;
+public:
+    void update() const {
+        cache.update(); // const 함수에서 맴버 변수 변경은 불가능( const T& )
+        // 하지만 위와 같이 특정한 상황에서 const 함수 내부에서 변경하기 위해 mutable 키워드를 사용할 수 있음.
+        // mutable 키워드는 간략하게 설명하자면 const 함수 내부에서 맴버 변수에 const가 아닌 작업을 할 수 있게 해줌.
+    }
+};
+
 int main() {
     static_member_class smc1;
     static_member_class smc2;
