@@ -75,6 +75,11 @@ public:
     }
 };
 
+std::ostream& operator << (std::ostream& os, const Point2D &p) {
+    os << p.get_x() << " " << p.get_y();
+    return os;
+}
+
 class Point2D_ptr {
 private:
     Point2D *p;
@@ -112,7 +117,8 @@ int main() {
 
     p2 = p2 - p3;
     cout << (string)p2 << '\n';
-    pout(p2);
+    // pout(p2);
+    cout << p2 << endl;
 
     PointArray parray;
 
