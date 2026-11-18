@@ -11,3 +11,5 @@ add_executable(constructor constructor/constructor.cpp)
 add_executable(destructor destructor/destructor.cpp)
 add_executable(this_pointer this_pointer/this_pointer.cpp)
 add_executable(cv-qualifiers cv-qualifiers/cv-qualifiers.cpp)
+add_executable(my_string example/my_string/my_string.cpp example/my_string/my_string.h
+        example/my_string/main.cpp)
