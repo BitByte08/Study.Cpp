@@ -44,6 +44,21 @@ int ConstructorUser::get_id() {
     return id_;
 }
 
+class InitalizerListUser {
+private:
+    int& reference;
+public:
+    InitalizerListUser(int& number) : reference(number) {} // 이와 같이 클래스의 맴버 변수를 초기화 하는 문법을 초기화 리스트라고 한다.
+    void change() {
+        reference = 20;
+    }
+    // 기존의 생성자와 가장 큰 차이점은 생성과 초기화를 동시에 수행한다는 것이다.
+    // 레퍼런스와 같이 생성시에 반드시 초기화 되어야 하는 타입의 경우에는 이런 초기화 리스트를 사용하여 구현할 수 있다.
+    // InitalizerListUser(int& number) { // 레퍼런스를 생성 후 초기화는 불가능하다.
+    //     reference = number;
+    // }
+};
+
 int main() {
     User u;
     cout << u.get_id() << endl; // 당연히 객체가 생성되었을 때 초기화를 하지 않아 쓰레기 값이 출력됨.
@@ -59,4 +74,9 @@ int main() {
 
     ConstructorUser cu3(cu);
     cout << cu3.get_id() << endl;
+
+    int n = 10;
+    InitalizerListUser il(n);
+    il.change();
+    cout << n << endl;
 }
