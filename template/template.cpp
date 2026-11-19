@@ -75,6 +75,16 @@ T min_t(T a, T b) {
     return b;
 }
 
+template <typename T> // 재귀 마지막은 하나의 인자만 들어오기에 단일 인자 템플릿을 선언
+void print(T arg) {
+    cout << arg << endl;
+}
+template <typename T, typename... Types> // 가변길이로 받는 템플릿
+void print(T arg, Types... args) {
+    cout << arg << ", ";
+    print(args...);
+}
+
 int main() {
     Array<int> array(3);
     array[0] = 1;
@@ -128,4 +138,6 @@ int main() {
 
     cout << min_t<int, Compare<int>>(3, 4) << endl;
     cout << min_t(3, 4) << endl; // 디폴트 템플릿 인자를 사용하면 간략하게 작성할 수 있다.
+
+    print(1,2,3,4,5); // 템플릿은 가변길이를 지원한다.
 }
