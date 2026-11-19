@@ -25,3 +25,4 @@ configure_file(stream/file_stream_output.txt ${CMAKE_CURRENT_BINARY_DIR}/file_st
 
 add_executable(string_stream stream/string_stream.cpp)
 add_executable(template template/template.cpp)
+add_executable(template_metaprogramming template/template_metaprogramming.cpp)
