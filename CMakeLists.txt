@@ -24,3 +24,4 @@ configure_file(stream/file_stream_other.txt ${CMAKE_CURRENT_BINARY_DIR}/file_str
 configure_file(stream/file_stream_output.txt ${CMAKE_CURRENT_BINARY_DIR}/file_stream_output.txt COPYONLY)
 
 add_executable(string_stream stream/string_stream.cpp)
+add_executable(template template/template.cpp)
