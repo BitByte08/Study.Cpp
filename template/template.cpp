@@ -85,6 +85,15 @@ void print(T arg, Types... args) {
     print(args...);
 }
 
+template <typename T>
+void vector_print(T arg) {
+    // T::iterator it = arg.begin(); // 의존 타입이므로 T::iterator로 선언시 이를 값으로 볼 수 있음
+    typename T::iterator it = arg.begin(); // 따라서 T::iterator를 타입이라고 명시해주어야함.
+    for (; it != arg.end(); it++) {
+        cout << *it << ", ";
+    }
+}
+
 int main() {
     Array<int> array(3);
     array[0] = 1;
@@ -140,4 +149,5 @@ int main() {
     cout << min_t(3, 4) << endl; // 디폴트 템플릿 인자를 사용하면 간략하게 작성할 수 있다.
 
     print(1,2,3,4,5); // 템플릿은 가변길이를 지원한다.
+    vector_print<vector<int>>(v);
 }
