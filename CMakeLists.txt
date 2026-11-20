@@ -3,6 +3,8 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 20)
 
+add_compile_definitions($<$<CONFIG:Debug>:_GLIBCXX_DEBUG>)
+
 add_executable(untitled main.cpp)
 add_executable(operator_overloading operator_overloading/operator_overloading.cpp)
 add_executable(reference reference/reference.cpp)
@@ -26,3 +28,7 @@ configure_file(stream/file_stream_output.txt ${CMAKE_CURRENT_BINARY_DIR}/file_st
 add_executable(string_stream stream/string_stream.cpp)
 add_executable(template template/template.cpp)
 add_executable(template_metaprogramming template/template_metaprogramming.cpp)
+add_executable(sequence_container standard_template_library/sequence_container.cpp)
+add_executable(my_deque example/my_deque/my_deque.cpp
+        example/my_deque/my_deque.h
+        example/my_deque/main.cpp)
