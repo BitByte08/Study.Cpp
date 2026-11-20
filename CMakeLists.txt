@@ -29,9 +29,6 @@ add_executable(string_stream stream/string_stream.cpp)
 add_executable(template template/template.cpp)
 add_executable(template_metaprogramming template/template_metaprogramming.cpp)
 add_executable(sequence_container standard_template_library/sequence_container.cpp)
-add_executable(my_deque example/my_deque/my_deque.cpp
-        example/my_deque/my_deque.h
-        example/my_deque/main.cpp
-        example/my_deque/my_deque.cpp
+add_executable(my_deque example/my_deque/my_deque.tpp
         example/my_deque/my_deque.h
         example/my_deque/main.cpp)
