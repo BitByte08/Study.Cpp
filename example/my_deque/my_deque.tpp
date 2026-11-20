@@ -126,5 +126,5 @@ T& my_deque<T>::front() {
 template <typename T>
 T& my_deque<T>::back() {
     assert(size() > 0);
-    return at(size()-1);
+    return (*this)[size()-1];
 }
